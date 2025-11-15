@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Authentication System</title>
+    <link rel="stylesheet" href="auth.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Login Form -->
+        <div class="auth-card" id="loginCard">
+            <h2 class="card-title">Login</h2>
+            <form id="loginForm" class="auth-form">
+                <div class="form-group">
+                    <label for="loginEmail">Email</label>
+                    <input 
+                        type="email" 
+                        id="loginEmail" 
+                        class="form-input" 
+                        placeholder="Enter your email"
+                        required
+                    >
+                </div>
+                
+                <div class="form-group">
+                    <label for="loginPassword">Password</label>
+                    <input 
+                        type="password" 
+                        id="loginPassword" 
+                        class="form-input" 
+                        placeholder="Enter your password"
+                        required
+                    >
+                </div>
+                
+                <div class="error-message" id="loginError"></div>
+                
+                <button type="submit" class="btn btn-primary">Login</button>
+                
+                <p class="switch-text">
+                    Don't have an account? 
+                    <a href="#" id="showRegister">Register here</a>
+                </p>
+            </form>
+        </div>
+
+        <!-- Registration Form -->
+        <div class="auth-card hidden" id="registerCard">
+            <h2 class="card-title">Register</h2>
+            <form id="registerForm" class="auth-form">
+                <div class="form-group">
+                    <label for="registerName">Full Name</label>
+                    <input 
+                        type="text" 
+                        id="registerName" 
+                        class="form-input" 
+                        placeholder="Enter your full name"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="registerEmail">Email</label>
+                    <input 
+                        type="email" 
+                        id="registerEmail" 
+                        class="form-input" 
+                        placeholder="Enter your email"
+                        required
+                    >
+                </div>
+                
+                <div class="form-group">
+                    <label for="registerPassword">Password</label>
+                    <input 
+                        type="password" 
+                        id="registerPassword" 
+                        class="form-input" 
+                        placeholder="Enter your password (min 6 characters)"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="registerConfirmPassword">Confirm Password</label>
+                    <input 
+                        type="password" 
+                        id="registerConfirmPassword" 
+                        class="form-input" 
+                        placeholder="Confirm your password"
+                        required
+                    >
+                </div>
+                
+                <div class="error-message" id="registerError"></div>
+                <div class="success-message" id="registerSuccess"></div>
+                
+                <button type="submit" class="btn btn-primary">Register</button>
+                
+                <p class="switch-text">
+                    Already have an account? 
+                    <a href="#" id="showLogin">Login here</a>
+                </p>
+            </form>
+        </div>
+
+        <!-- Secured Page -->
+        <div class="secured-page hidden" id="securedPage">
+            <div class="secured-card">
+                <div class="welcome-header">
+                    <h2>Welcome, <span id="userName"></span>!</h2>
+                    <button class="btn btn-logout" id="logoutBtn">Logout</button>
+                </div>
+                
+                <div class="secured-content">
+                    <div class="info-icon">🔒</div>
+                    <h3>Secured Page</h3>
+                    <p>You have successfully logged in and now have access to this protected content.</p>
+                    
+                    <div class="user-info">
+                        <h4>Your Account Information:</h4>
+                        <p><strong>Name:</strong> <span id="userNameDisplay"></span></p>
+                        <p><strong>Email:</strong> <span id="userEmailDisplay"></span></p>
+                        <p><strong>Account Created:</strong> <span id="userDateDisplay"></span></p>
+                    </div>
+                    
+                    <div class="secured-features">
+                        <div class="feature-card">
+                            <span class="feature-icon">📊</span>
+                            <h4>Dashboard</h4>
+                            <p>Access your personal dashboard</p>
+                        </div>
+                        <div class="feature-card">
+                            <span class="feature-icon">⚙️</span>
+                            <h4>Settings</h4>
+                            <p>Manage your account settings</p>
+                        </div>
+                        <div class="feature-card">
+                            <span class="feature-icon">📁</span>
+                            <h4>Files</h4>
+                            <p>View your private files</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="auth.js"></script>
+</body>
+</html

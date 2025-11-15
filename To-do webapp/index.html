@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do Web App</title>
+    <link rel="stylesheet" href="todo.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Left Side - Add Task Form -->
+        <div class="form-section">
+            <div class="form-card">
+                <input 
+                    type="text" 
+                    id="taskTitle" 
+                    class="input-field" 
+                    placeholder="Title"
+                    required
+                >
+                
+                <textarea 
+                    id="taskDescription" 
+                    class="input-field textarea-field" 
+                    placeholder="Description"
+                    rows="5"
+                    required
+                ></textarea>
+                
+                <div class="validation-message" id="validationMessage">
+                    <span class="warning-icon">⚠️</span>
+                    <span>Please fill out this field.</span>
+                </div>
+                
+                <button class="save-btn" id="saveBtn">Save</button>
+            </div>
+        </div>
+
+        <!-- Right Side - Task Lists -->
+        <div class="tasks-section">
+            <!-- Tabs -->
+            <div class="tabs">
+                <button class="tab-btn active" data-tab="pending">Pending Tasks</button>
+                <button class="tab-btn" data-tab="completed">Completed Tasks</button>
+            </div>
+
+            <!-- Task Table -->
+            <div class="task-table">
+                <div class="table-header">
+                    <div class="header-title">Title</div>
+                    <div class="header-description">Description</div>
+                    <div class="header-date">Date & Time</div>
+                    <div class="header-action">Action</div>
+                </div>
+
+                <!-- Pending Tasks List -->
+                <div id="pendingTasks" class="task-list active">
+                    <!-- Tasks will be dynamically added here -->
+                </div>
+
+                <!-- Completed Tasks List -->
+                <div id="completedTasks" class="task-list">
+                    <!-- Completed tasks will be dynamically added here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="todo.js"></script>
+</body>
+</html>
